@@ -1,0 +1,305 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome|typicons);
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: 120px;
+    background: #304779;
+    color: #fff;
+    
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    
+
+}
+
+header .encabezado img {
+    animation-name: logo;
+    animation-duration: .8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes logo {
+    from {
+        transition: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.encabezado {
+    width: 100%;
+    margin: auto;
+    height: 20%;
+    padding: 20px;
+}
+
+.encabezado h1 {
+    display: inline-block;
+    margin-left: 5px;
+    
+}
+
+header .encabezado {
+    display: table;
+}
+
+#menu-bar {
+    display: none;
+}
+
+.menu {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #304779;
+    opacity: 0.8;
+    transition: all 0.5s;
+    transform: translateX(-100%);
+}
+
+.menu a {
+    display: block;
+    color: #fff;
+    height: 50px;
+    text-decoration: none;
+    padding: 25px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(49, 46, 113, 0.3);
+}
+
+header label {
+    float: right;
+    margin-top: 10px;
+    font-size: 40px;
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+#menu-bar:checked ~ .menu {
+    transform: translateX(0%);
+}
+
+section {
+    width: 60%;
+    background: blue;
+    height: 600px;
+    float: left;
+}
+
+
+.slider {
+    float: left;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    height: 100%;
+}
+
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    height: 100%;
+
+    animation: cambio 10s infinite alternate linear;
+}
+
+.slider li {
+    width: 400%;
+    list-style: none;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes cambio {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+.articulos {
+    float: right;
+    width: 40%;
+    background: white;
+    height: 600px;
+}
+
+.articulos h2 {
+    text-align: center;
+    margin-top: 10px;
+
+    animation-name: aparecer;
+    animation-iteration-count: infinite;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-direction: alternate;    
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.articulos p {
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 55%;
+    margin: auto;
+    margin-top: 15px;
+    font-size: 25px;
+
+    animation: pulse 1.5s infinite;
+}
+
+.articulos .content {
+    width: 450px;
+    height: 450px;
+    border-radius: 10px;
+    background: rgb(212, 214, 163);
+    margin: auto;
+    margin-top: 20px;
+}
+
+.fotos {
+    animation: 0.5s fotos 1;
+}
+
+.fotos:hover {
+    animation: reverse;
+}
+
+@keyframes fotos {
+    20%, 50% {
+        transform: translateY(0px);
+    }
+    40% {
+        transform: translateY(-45px);
+    }
+    60% {
+        transform: translateY(-25px);
+    }
+}
+
+.fotos img {
+    float: left;
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    margin-left: 15px;
+    margin-top: 15px;
+    position: relative;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(.99);
+        box-shadow: 0 0 0 0 rgba(256, 256, 256, .1);
+    }
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 25px rgba(256, 256, 256, 0);
+    }
+    0% {
+        transform: scale(.99);
+        box-shadow: 0 0 0 0 rgba(256, 256, 256, 0);
+    }
+}
+
+input[type="button"] {
+    background: linear-gradient(#f1090990, #f70909);
+    border: 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 0;
+}
+
+input[type="button"]:hover {
+    opacity: 1;
+}
+ 
+input[type="button"]:active {
+    transform: scale(0.95);
+}
+
+footer {
+    clear: both;
+    background: #304779;
+    width: 100%;
+    display: table;
+    text-align: center;
+    position: sticky;
+    margin-top: -30px;
+    position: sticky;
+    bottom: 0;
+}
+
+footer h1 {
+    color: white;
+    position: relative;
+}
+
+footer h1  span {
+    position: absolute;
+    right: 0;
+    width: 0;
+    background: #304779;
+
+    animation: maquina 5s infinite alternate steps(41);
+}
+
+@keyframes maquina {
+    from {
+        width: 100%;
+    }
+    to {
+        to: 0%;
+    }
+}
+
+.final {
+    background: black;
+    width: 100%;
+    height: 34px;
+    text-align: center;
+}
+
+.sociales a {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 5px;
+    padding: 2px;
+} 
